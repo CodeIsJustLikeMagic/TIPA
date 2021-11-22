@@ -1,0 +1,7 @@
+
+TIPA_library/utils/__pycache__/
+TIPA_library/main/__pycache__/
+.ipynb_checkpoints/TIPA_basic_run-checkpoint.ipynb
+*.jpg
+*.npy
+data/
