@@ -74,3 +74,29 @@ class data_preparation_raw_matrix:
         self.frame_length = matrix.shape[2]
         self.thermal_matrix = matrix
         self.time_stamp = np.arange(0,self.frame_length/framerate,1/framerate)
+        
+    # To show thermal 2D sequences interactively
+    def interactive_imshow_cond(self, frame_number):
+        plt.figure(2)
+        plt.imshow(self.thermal_matrix[:,:,frame_number], cmap=plt.get_cmap('hot'))
+        plt.colorbar()
+    #     plt.show()
+    
+    def interactive_imshow_cond2(self, frame_number, thermal_range):
+        plt.figure(2)
+        plt.imshow(self.thermal_matrix[:,:,frame_number], cmap=plt.get_cmap('hot'), vmin=thermal_range[0], vmax=thermal_range[1])
+        plt.colorbar()
+    #     plt.show()
+    
+    def interactive_imshow_cond3(self, frame_number):
+        plt.figure(2)
+        min_T, max_T=oq_range(self.thermal_matrix[:,:,frame_number])
+        plt.imshow(self.thermal_matrix[:,:,frame_number], cmap=plt.get_cmap('hot'), vmin=min_T, vmax=max_T)
+        plt.colorbar()
+    #     plt.show()
+    
+    def interactive_imshow_cond4(self, frame_number):
+        plt.figure(2)
+        plt.imshow(self.tracked_matrix[:,:,frame_number], cmap=plt.get_cmap('hot'))
+        plt.colorbar()
+    #     plt.show()  
